@@ -1,0 +1,132 @@
+body
+{
+   background-color: #A3C2C2;
+}
+
+a
+{
+   color: #000099;
+}
+
+button.side_menu_button
+{
+   background-color: #5C5CD6;
+   color: white;
+   padding: 5px 2px 5px 2px;
+   margin: 2px 2px 2px 2px;
+   border: 2px solid black;
+   border-radius: 6px;
+}
+
+div.section1
+{
+   background-color: #4C4C4C;
+   color: white;
+   margin: 3px 3px 3px 3px;
+   padding: 10px 10px 10px 10px;
+   border-radius: 10px;
+   //width: 85%;
+}
+
+div.section2
+{
+   background-color: #4C4C4C;
+   color: white;
+   margin: 7px 7px 7px 7px;
+   padding: 10px 10px 10px 10px;
+   border-radius: 10px;
+   //width: 85%;
+}
+
+div.panel_sub_section
+{
+   background-color: gray;
+   color: black;
+   margin: 7px 7px 7px 7px;
+   padding: 10px 10px 10px 10px;
+   border-radius: 10px;
+   //width: 85%;
+}
+
+div.menu_bar
+{
+   background-color: #ADD6FF;
+   color: black;
+   margin: 3px 3px 3px 3px;
+   padding: 10px 10px 10px 10px;
+   border-radius: 10px;
+   width: inherit;
+}
+
+div.dialog_box
+{
+   background-color: #CCCCCC;
+   color: black;
+   position: fixed;
+   left: 50%;
+   top: 50%;
+   transform: translateX(-50%) translateY(-50%);
+   border: 2px solid black;
+   border-radius: 10px;
+   display: inline-block;
+   padding: 10px 10px 10px 10px;
+}
+
+table.trans_list
+{
+   color: black;
+   border-collapse: collapse;
+   width: 100%;
+   padding: 10px 10px 10px 10px;
+}
+
+
+.highlight_table_row
+{
+   background-color: red !important;
+}
+
+
+table.trans_list tr
+{
+   background-color: #85C2FF;
+}
+
+
+table.trans_list th
+{
+   background-color: #3399FF; 
+   border: 2px solid black;
+   padding: 5px 5px 5px 5px;
+}
+
+
+table.trans_list td
+{
+   border: 2px solid black;
+   padding: 5px 5px 5px 5px;
+}
+
+
+
+table.button_bar
+{
+   background-color: gray;
+   border-radius: 10px;
+   color: black;
+   margin: 5px 5px 5px 5px;
+}
+
+
+table.button_bar th
+{
+   padding: 5px 5px 5px 5px;
+}
+
+
+table.button_bar td
+{
+   padding: 5px 5px 5px 5px;
+}
+
+

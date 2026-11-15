@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+<title>Suzi's Sensor Site</title>
+<link rel="stylesheet" href="/static/css/main.css" type="text/css">
+<link rel="stylesheet" href="/static/css/navbar.css" type="text/css">
+
+<!-- <script src="/static/js/jquery.min.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="static/js/mainapp.js"></script>
+<script>
+
+let theapp = new MainApp("theapp","mainwindow");
+
+$(document).ready(function() 
+{
+	theapp.load_navigation_menu("topnavbar");
+
+	theapp.home_dashboard();
+});
+
+</script>
+
+</head>
+<body>
+    <table id="page_table" style="width:100%;">
+        <tr>
+            <td>
+                <div class="section1" style="align:left;overflow:hidden;">
+                    <div id="navbar" style="align:left;float:left;">
+						<div id="topnavbar" class="navbar">
+							<a href="#" onclick="theapp.home_dashboard();">Home</a>
+						</div>
+                    </div>
+                    <div style="align:right;float:right;">
+                        Not logged in
+                        <br/>
+                        <a href="/login">Login Here</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <div class="section2">
+                       <div id="mainwindow">Content is shown here</div>
+                    </div>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chart.js example</title>
+
+	<!-- Or use this link which redirects to the latest version -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+	function load_dashboard()
+	{
+		const ctx = document.getElementById('myChart');
+		const query_data = {'Yellow': 30, 'Red': 50, 'Blue': 12}
+		let dash_labels = []
+		let dash_data = []
+
+		for(let label in query_data)
+		{
+			dash_labels.push(label);
+			dash_data.push(query_data[label]);
+		} 
+
+		new Chart(ctx, {
+			type: 'line', // Specify the chart type
+			data: {
+				labels: dash_labels,
+			datasets: [{
+				label: 'My First Dataset',
+				data: dash_data,
+			    fill: false,
+			    borderColor: 'rgb(75, 192, 192)',
+				tension: 0.1,
+				borderWidth: 1
+				}]
+			},
+			options: {
+			scales: {
+			y: {
+				beginAtZero: true
+				}
+			}}
+		});
+	}
+
+	$(document).ready(function() 
+	{
+		load_dashboard();
+	});
+
+</script>
+
+
+  </head>
+  <body>
+    <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
+    <div style="width: 800px;"><canvas id="myChart"></canvas></div>
+
+    <!-- <script type="module" src="dimensions.js"></script> -->
+  </body>
+</html>
+

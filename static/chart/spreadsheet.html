@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Chart.js example</title>
+
+	<!-- Or use this link which redirects to the latest version -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<script src="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.js"></script>
+	<script src="https://jsuites.net/v5/jsuites.js"></script>
+	<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v5/jspreadsheet.css" type="text/css" />
+	<link rel="stylesheet" href="https://jsuites.net/v5/jsuites.css" type="text/css" />
+
+<script>
+
+	let cell_update = function (instance, cell, x, y, newvalue, oldvalue)
+	{
+		console.log(`Cell changed: ${cell}/${x}/${y}/${newvalue}/${oldvalue}`);
+		console.log(cell);
+		console.log(instance);
+		const postData = {
+			col: x,
+			row: y,
+			newValue: newvalue
+		};
+
+		// jQuery post request
+		/*$.post('/update-endpoint', postData, function(response) {
+			console.log('Server updated:', response);
+		});*/
+
+	}
+
+	function load_dashboard()
+	{
+		const ctx = document.getElementById('spreadsheet');
+
+		jspreadsheet(ctx, {
+			worksheets: [
+				{
+					data: [
+						['Jazz', 'Honda', '2019-02-12', '', true, '$ 2.000,00', '#777700'],
+						['Civic', 'Honda', '2018-07-11', '', true, '$ 4.000,01', '#007777'],
+					],
+					columns: [
+						{ type: 'text', title: 'Car', width: 120 },
+						{
+							type: 'dropdown',
+							title: 'Make',
+							width: 200,
+							source: ['Alfa Romeo', 'Audi', 'Bmw', 'Honda'],
+						},
+						{ type: 'calendar', title: 'Available', width: 200 },
+						{ type: 'image', title: 'Photo', width: 120 },
+						{ type: 'checkbox', title: 'Stock', width: 80 },
+						{
+							type: 'numeric',
+							title: 'Price',
+							width: 100,
+							mask: '$ #.##,00',
+							decimal: ',',
+						},
+						{ type: 'color', width: 100, render: 'square' },
+					],
+				},
+			],
+            toolbar: true,
+			onchange: cell_update,
+		});
+	}
+
+	$(document).ready(function() 
+	{
+		load_dashboard();
+	});
+
+</script>
+
+
+  </head>
+  <body>
+    <!-- <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/> -->
+	<div id="spreadsheet"></div>
+    <!-- <script type="module" src="dimensions.js"></script> -->
+  </body>
+</html>
+
